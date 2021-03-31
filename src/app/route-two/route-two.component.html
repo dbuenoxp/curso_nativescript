@@ -1,0 +1,9 @@
+<ActionBar title="Hello, {{ firstname }} {{ lastname }}">
+    <NavigationButton (tap)="onNavBtnTap()" text="Go Back" android.systemIcon="ic_menu_back"></NavigationButton>
+</ActionBar>
+
+<StackLayout>
+    <label text="The date is: {{ currentDate }}" class="font-weight-bold m-x-15"></label>
+    <label text="The time is: {{ currentTime }}" class="font-weight-bold m-x-15"></label>
+    <Button [nsRouterLink]="['/route-three']" text="route-two works!" class="btn btn-primary"></Button>
+</StackLayout>

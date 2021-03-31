@@ -1,0 +1,33 @@
+<ActionBar title="Root Page">
+    <ActionItem text="Something"></ActionItem>
+</ActionBar>
+
+<!-- <GridLayout>
+    <ListView [items]="people" (itemTap)="onItemTap($event)" (loadMoreItems)="onLoadMoreItems()">
+        <ng-template let-p="item" let-i="index">
+            <GridLayout rows="auto" columns="50, *, auto">
+                <Label row="0" col="0" text="{{ i }}."></Label>
+                <Label row="0" col="1" text="{{ p.firstname }}"></Label>
+                <Label row="0" col="2" text="{{ p.lastname }}"></Label>
+            </GridLayout>
+        </ng-template>
+    </ListView>
+</GridLayout> -->
+
+<ScrollView>
+    <StackLayout class="nt-form">
+        <StackLayout class="nt-input">
+            <Label text="First Name"></Label>
+            <TextField hint="First Name" [(ngModel)]="firstname"></TextField>
+        </StackLayout>
+        <StackLayout class="nt-input">
+            <Label text="Last Name"></Label>
+            <TextField hint="Last Name" [(ngModel)]="lastname"></TextField>
+        </StackLayout>
+        <StackLayout orientation="horizontal" class="nt-input">
+            <Label class="font-weight-bold custom-text" text="Remember Me?" verticalAlignment="center"></Label>
+            <Switch checked="true"></Switch>
+        </StackLayout>
+        <Button [@state]="currentState ? 'active' : 'inactive'" text="Submit" (tap)="onSubmitTap()" class="btn -primary"></Button>
+    </StackLayout>
+</ScrollView>

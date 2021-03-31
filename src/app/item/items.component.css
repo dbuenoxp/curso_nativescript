@@ -1,0 +1,15 @@
+.custom-text{
+    color: #DD00CC
+}
+
+@keyframes example{
+    from { background-color: red;}
+    to { background-color: green ;}
+}
+
+.btn{
+    animation-name: example;
+    animation-duration: 4s;
+    animation-delay:2s;
+    animation-fill-mode: forwards;
+}

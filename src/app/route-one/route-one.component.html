@@ -1,0 +1,44 @@
+<ActionBar title="Root Page">
+    <ActionItem (Tap)="onHelpTap()" text="Help" android.systemIcon="ic_menu_help"></ActionItem>
+</ActionBar>
+
+<!-- <GridLayout>
+    <ListView [items]="people" (itemTap)="onItemTap($event)" (loadMoreItems)="onLoadMoreItems()">
+        <ng-template let-p="item" let-i="index">
+            <GridLayout rows="auto" columns="50, *, auto">
+                <Label row="0" column="0" text="{{ i }}"></Label>
+                <Label row="0" column="1" text="{{ p.firstname }}"></Label>
+                <Label row="0" column="2" text="{{ p.lastname }}"></Label>
+            </GridLayout>
+        </ng-template>
+    </ListView>
+</GridLayout> -->
+
+<ScrollView>
+    <StackLayout class="nt-form">
+        <StackLayout class="nt-input">
+            <label text="First Name"></label>
+            <TextField hint="First Name" [(ngModule)]="firstname"></TextField>
+        </StackLayout>
+        <StackLayout class="nt-input">
+            <label text="Last Name"></label>
+            <TextField hint="Last Name" [(ngModule)]="lastname"></TextField>
+        </StackLayout>
+        <StackLayout orientation="horizontal" class="nt-input">
+            <label class="font-weight-bold custom-text" text="Remember Me?"></label>
+            <Switch checked="true"></Switch>
+        </StackLayout>  
+        <!-- <Button [nsRouterLink]="['/route-two', firstname, lastname]"
+        [queryParams]="{site: 'The Polyglot Developer' }"
+        [@state]="currentState ? 'active' : 'inactive'" 
+        text="Submit" 
+        class="btn btn-primary"></Button>     -->
+        <Button 
+            (tap)="onSubmitTap()" 
+            [@state]="currentState ? 'active' : 'inactive'" 
+            text="Submit" 
+            class="btn -primary">
+        </Button>
+        <Button text="Reset" (tap)="clearStorage()" class="btn -secondary"></Button> 
+    </StackLayout>
+</ScrollView>
